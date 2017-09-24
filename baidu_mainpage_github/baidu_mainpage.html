@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	
+	<!--
+    	时间：2017-09-22
+    	描述：
+    	百度首页编写步骤：
+    	1、分析百度首页，由顶部、中部和尾部构成
+    	2、div块级分区，CSS设置好相应区域颜色，加以区分
+    	
+    	3、顶部分析：顶部由一个logo和多个超级链接组成
+    	
+    	4、中部分析：一个输入框和搜索按钮组合、多个超链接
+    	
+    	
+    	
+    -->
+	<head>
+		<meta charset="utf-8" />
+		<title>百度一下，你就知道</title>
+		<style type="text/css">
+			
+			div {
+				text-align: center;  /* 由于网页中所有的标签都是居中显示，所以可以全体设置居中 */
+			}
+			
+			
+			/* 百度首页 顶部CSS */
+			.header {
+				height: 200px; /* 宽度默认为浏览器宽度 */
+			
+			}
+			
+			/* 由于图片div的高度默认是图片的高度，图片下面的文字间距太小，所以把图片div的高度设置大一点，产生间距 */
+			.baidu_logo_div {
+				height:150px ;  
+				
+			}
+			.header_nav_div {
+				
+			}
+			
+			
+			
+			/* 百度首页 中部CSS */
+			.content {
+				height: 300px;
+				 
+			}
+			
+			.searchbar_text {
+				width: 400px;
+				height: 40px;
+			}
+			.searchbar_submit {
+				width: 100px;
+				height: 36px;
+			}
+			
+			.contet_search_div {
+				
+				height: 70px;
+			}
+			.content_baike_div {
+				
+				height: 140px;
+			}
+			.contet_map_div {
+				
+			}
+			
+			.content_bottom_img {
+				display: inline-block;  /* 块级元素  转换成  行内块级元素 */
+				
+			}
+
+			
+			/* 百度首页 底部CSS */
+			.footer {
+				
+				height: 200px;
+				
+			}
+			.footer_main_div {
+				
+				height: 60px;
+			}
+			.footer_about_div {
+				
+				height: 80px;
+			}
+			
+			.pcolor {color: rgb(102,102,102);}
+			
+		</style>
+	</head>
+	
+	
+	
+	
+	<body>
+		<!-- 百度首页顶部  -->
+		<div class="header">
+			<div class="baidu_logo_div"><img src="img/images/bdlogo.gif" /></div>
+			
+			<div class="header_nav_div">
+				<a href="#">新 闻</a>
+				<!-- <a href="#">网 页</a>  -->
+				<strong class="pcolor">网 页</strong>
+				<a href="#">贴 吧</a>
+				<a href="#">知 道</a>
+				<a href="#">音 乐</a>
+				<a href="#">图 片</a>
+				<a href="#">视 频</a>
+				<a href="#">地 图</a>
+			</div>
+
+		</div>
+		
+		
+		
+		
+		<!-- 百度首页中部  -->
+		<div class="content">
+			<div class="contet_search_div">
+				<form action="https://www.baidu.com">
+				<input type="text" name="search_value" class="searchbar_text" />
+				<input type="submit" value="百度一下" class="searchbar_submit"/>
+				</form>
+			</div>
+		
+			<div class="content_baike_div">
+				<a href="#">百科</a>
+				<a href="#">文库</a>
+				<a href="#">hao123</a>
+				|
+			<!--	<small>&nbsp;|&nbsp;</small>  -->
+				<a href="#">更多&gt;&gt;</a>
+			</div>
+			
+			<div class="contet_map_div">
+				<p class="content_bottom_img"><img src="img/images/ic.jpg" /></p>
+				<a href="#">百度地图带你吃喝玩乐，全心全意为人民服务</a>
+			</div>
+			
+			    
+		</div>
+		
+		
+		<!-- 百度首页底部  -->
+		<div class="footer">
+			<div class="footer_main_div">
+				<a href="#">把百度设为主页</a>
+				<a href="#">安装百度卫士</a>
+				<a href="#">hao123</a>
+			</div>
+			
+			<div class="footer_about_div">
+				<a href="#">加入百度推广</a>
+				|
+			<!--	<small>&nbsp;|&nbsp;</small>  -->
+				<a href="#">搜索风云榜</a>
+				|
+			<!--	<small>&nbsp;|&nbsp;</small>  -->
+				<a href="#">关于百度</a>
+				|
+			<!--	<small>&nbsp;|&nbsp;</small>  -->
+				<a href="#">About Baidu</a>
+				<br /><br />
+				<p class="pcolor">&copy;2016 Baidu 使用百度前必读 京ICP证666号</p>
+			</div>
+		</div>
+		
+		
+		
+	</body>
+</html>
