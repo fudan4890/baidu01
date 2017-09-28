@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度糯米团购</title>
+		<style type="text/css">
+			
+			* {margin: 0; padding: 0;}
+			ul {width: 800px; height: 40px; list-style: none; margin: 0 auto; margin-top: 100px; text-align: center;}
+			
+			li {width: 100px; height: 40px; line-height: 40px; text-align: center; color: white; background-color: yellowgreen; display: inline-block;}
+			/* 找到ul中的第4 个li */
+			ul li:nth-of-type(4) {background-color: orange; position: relative;} /* 父相对 */
+			
+			/* ul li img {position: absolute; left: 39px; top: -8px;} /* 子绝对,数字是通过开发者模式调整出来的 */
+			
+			/* 
+			 * 上面的方式有弊端，当父元素宽度改变时，子元素位置不变，不能居中
+			 * 下面的方式能设置，无论父元素宽度如何改变，子元素的位置也会随之改变居中显示
+			 * top：-8px相对定位设置垂直居中
+			 *  left:50%  margin-left: 负的子元素宽度的一半          设置水平居中
+			 *  */
+			ul li img {position: absolute; top: -8px;  left: 50%; margin-left: -12px;} 
+			
+			.goodsDiv {width: 800px; height: 800px; border: 1px solid green; margin: 0 auto; text-align: center; margin-top: 30px; padding: 10px;}
+			
+			.goodsBox {width: 253.3px; height: 300px; border: 1px solid orange; position: relative; float: left;}
+			.goodsBox img {width: 253.3px; height: 200px;}
+		
+			.goodsBox .hot {width: 45px; height: 44px; background:url(img/images/tuangou.png) no-repeat 0px -280px; position: absolute; left: 0; top: 0;}
+			.goodsBox .price {width: 134px; height: 42px; background: url(img/images/tuangou.png)no-repeat 0px -362px; position: absolute; left: 0px; top: 163px;}
+			
+			
+			.goodsBox02 {width: 253.3px; height: 300px; margin-left: 10px; border: 1px solid orange;float: left; position: relative;}
+			.goodsBox02 img {width: 253.3px; height: 200px;}
+			.goodsBox02 .span021 {width: 46px; height: 44px; background: url(img/images/tuangou.png) no-repeat -48px -280px; position: absolute; left: 0px; top: 0px;}
+			.goodsBox02 .span022 {width: 153px; height: 38px; background: url(img/images/tuangou.png) no-repeat 0px -240px; position: absolute; left: 0px; top: 168px;}
+			
+			
+			
+			
+			.goodsBox03 {width: 253.3px; height: 300px; margin-left: 10px; border: 1px solid orange;float: left; position: relative;}
+			.goodsBox03 img {width: 253.3px; height: 200px;}
+			.goodsBox03 .span031 {width: 45px; height: 44px; background: url(img/images/tuangou.png) no-repeat -96px -280px; position: absolute; left: 0px; top: 0px;}
+			.goodsBox03 .span032 {width: 184px; height: 38px; background: url(img/images/tuangou.png) no-repeat 0px 0px; position: absolute;left: 0px; top: 168px;}
+			
+			
+			
+		</style>
+	</head>
+	
+	
+	<body>
+		
+		<ul>
+			<li>服装城</li><li>美妆馆</li><li>京东超市</li><li>全球购
+				<img src="img/images/hot.png" alt="" />
+			</li><li>闪购</li><li>团购</li><li>拍卖</li><li>金融</li>
+		</ul>
+		
+		
+		<div class="goodsDiv">
+			
+			<div class="goodsBox">
+				<img src="img/images/meat.jpg" alt="" />
+				<span class="hot"></span>
+				<span class="price"></span>
+				【春熙路】醉烧刀海鲜美食荟 醉烧刀单人海鲜美食自助1份！免费WiFi！
+			</div>
+		
+		
+			<div class="goodsBox02">
+				<img src="img/images/meat.jpg" alt="" />
+				<span class="span021"></span>
+				<span class="span022"></span>
+				【多店通用】安德鲁森 生日蛋糕6选1！配送自提均可，需预约！
+			</div>
+			
+			<div class="goodsBox03">
+				<img src="img/images/meat.jpg" alt="" />
+				<span class="span031"></span>
+				<span class="span032"></span>
+				【万家湾】行大田牛排海鲜自助 单人午餐自助1份！免费停车，免费WiFi！
+			</div>
+			
+		</div>
+		
+		
+		
+	</body>
+</html>
