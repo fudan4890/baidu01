@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0px; padding: 0px;}
+			
+			.ul01 {
+				width: 400%;  /* 设置宽度为屏幕宽度的4倍，以免出现空白的界面 */
+				height: 670px;
+				
+				background-color: skyblue;  /* 设置背景颜色为白天 */
+				
+				animation: ttn 5s linear infinite alternate;  /* 动画名ttn 执行5秒 动画速度linear  无限次数infinite  设置动画往返alternate白天黑夜白天...  */
+				
+				position: relative;  /* 父相对子绝对定位，让三个li重叠在一起 */
+			}
+			
+			.ul01 li {
+				width: 400%;  /* 设置和父元素一样的宽高 */
+				height: 100%;
+				/* background-color: green; */
+				
+				position: absolute;  /* 父相对子绝对定位，让三个li重叠在一起 */
+				left: 0px;
+				top: 0px; 
+			}
+			
+			
+			/* 单独给每个 li 设置云层图片和动画，让每一层云朵动起来 */
+			.ul01 li:nth-child(1) {
+				background-image: url(img/cloud_one.png);
+				animation: one 30s linear infinite alternate; /* 动画名one 执行30秒 动画速度linear  无限次数infinite  设置动画往返alternate*/
+			}
+			.ul01 li:nth-child(2) {
+				background-image: url(img/cloud_two.png);
+				animation: two 30s linear infinite alternate; /* 动画名one 执行30秒 动画速度linear  无限次数infinite  设置动画往返alternate*/
+			}
+			.ul01 li:nth-child(3) {
+				background-image: url(img/cloud_three.png);
+				animation: three 30s linear infinite alternate; /* 动画名one 执行30秒 动画速度linear  无限次数infinite  设置动画往返alternate*/
+			}
+			
+			
+			@keyframes one {
+				from{
+					margin-left: 0;
+				}
+				to{
+					margin-left: -100%;  /* 从0开始偏右移动一个屏幕的宽度，并无限执行往返 */
+				}
+			}
+			
+			@keyframes two {
+				from{
+					margin-left: 0;
+				}
+				to{
+					margin-left: -200%;  /* 从0开始偏右移动二个屏幕的宽度，并无限执行往返 */
+				}
+			}
+			
+			
+			@keyframes three {
+				from{
+					margin-left: 0;
+				}
+				to{
+					margin-left: -300%;  /* 从0开始偏右移动三个屏幕的宽度，并无限执行往返 */
+				}
+			}
+			
+			
+			
+			
+		
+			@keyframes ttn {  /* 从白天到黑夜，从黑夜到白天 。。。*/
+				from{
+					background-color: skyblue;
+				}
+				to{   
+					background-color: black;
+				}
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<ul class="ul01">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+	</body>
+</html>
