@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>极客学院</title>
+		<style type="text/css">
+			body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,
+form,fieldset,legend,button,input,textarea,th,td  {margin:0;padding:0;}
+		
+		body {
+			background-color: rgb(244,244,244);
+		}
+
+		.topDiv {
+			width: 100%;
+			height: 450px;
+			/* background-color: tomato;*/
+			
+			
+		}
+		
+		.topDiv .topNavDiv {
+			width: 1000px;
+			height: 70px;
+			background-color: rgb(244,244,244);
+			margin: 0px 15%;   /**/
+			
+			
+			
+		}
+		
+		.topDiv .topNavDiv a {
+			display: inline-block;
+			width: 170px;
+			height: 36px;
+			
+			text-decoration: none;
+			margin-top: 17px;
+			margin-left: 0px;
+			float: left;
+		}
+		
+		.topDiv .topNavDiv ul {
+			width: 440px;
+			height: 30px;
+			margin-top: 20px;
+			float: left;
+		}
+		
+		.topDiv .topNavDiv ul li {
+			width: 73px;
+			height: 30px;
+			line-height: 30px;
+			float: left;
+			list-style: none;
+		}
+		.topDiv .topNavDiv ul li a {
+			width: 70px;
+			height: 30px;
+			line-height: 30px;
+			margin-top: 0px;
+			float: left;
+			display: inline-block;
+			color: grey;
+			font-family: "微软雅黑";
+			text-decoration: none;
+			
+			
+		}
+		.topDiv .topNavDiv ul li a img {
+			width: 14px ; 
+			height: 10px;
+			margin-top: 8px;
+			display: inline-block;
+			transition: transform 0.7s ; /* 箭头旋转时长 */
+		}
+		
+		
+		.topDiv .topNavDiv ul li a:hover {
+			color: green;
+			
+		}
+		
+		.topDiv .topNavDiv ul li a:hover img {
+			transform: rotateZ(180deg);  /* 旋转180度 */
+		}
+		
+		
+		
+		/* 顶部导航搜索框 */
+		.topDiv .topNavDiv input {
+			width: 190px;
+			height: 30px;
+			margin-top: 20px;
+			color: lightgray;
+			float: left;
+		}
+		.topDiv .topNavDiv .searchBtn {
+			display: inline-block;
+			width: 40px;
+			height: 32px;
+			margin-top: 20px;
+			line-height: 32px;
+			color: gray;
+			font-size: 10px;
+			float: left;
+			text-align: center;
+			border: 1px solid gray;
+			text-decoration: none;
+		}
+		
+		.topDiv .topNavDiv .topNavPersonDiv {
+			width: 150px;
+			height: 32px;
+			margin-top: 20px;
+			float: right;
+		}
+		.topDiv .topNavDiv .topNavPersonDiv a {
+			display: inline-block;
+			text-decoration: none;
+			margin-top: 0px;
+			width: 50px;
+			height: 32px;
+		}
+		.topDiv .topNavDiv .topNavPersonDiv .topNavPersonDiva1 img {
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			margin-top: 8px;
+			float: right;
+		}
+		
+		/* 此处要用到精灵图 */
+		.topDiv .topNavDiv .topNavPersonDiv .topNavPersonDiva2 img {
+			width: 16px;
+			height: 18px;
+			margin-top: 7px;
+			float: right;
+			background-image: url(img/centericon02.png);
+			background-position: -26px 0px;  /* 精灵图定位 */
+		}
+		.topDiv .topNavDiv .topNavPersonDiv .topNavPersonDiva3 img {
+			width: 32px;
+			height: 32px;
+			float: right ;
+			border-radius: 50%;  /* 圆形头像 */
+		}
+		
+		
+		.topDiv .topPicDiv {
+			width: 100%;
+			height: 360px;
+			overflow: hidden;  /* 当子元素的宽度超过100%时，会隐藏超过的部分不显示 */
+			
+			position: relative;	 /* 父相对子绝对，用于定位轮播图片左右控制按钮 */
+		}
+		
+		.topDiv .topPicDiv .lunBoPicDiv {
+			width: 400%;
+			height: 360px;
+			
+			animation: lunBoUl 10s linear 1 normal;   /* 设置轮播图动画：动画名、执行10秒、 匀速、执行两次、不往返  */ 	
+		}
+		
+		 .topDiv .topPicDiv .lunBoPicDiv li {
+		 	width: 25%;
+		 	height: 360px;   
+		 	border: 1px solid green;
+		 	box-sizing: border-box;
+		 	float: left;
+		 	list-style: none;
+		 }
+		 .topDiv .topPicDiv .lunBoPicDiv li a {
+		 	width: 100%;
+		 	height: 360px;
+		 	background-repeat: no-repeat;
+		 	text-decoration: none;
+		 	display: inline-block;
+		 	
+		 	/* 在一些大型网站中，首页的背景图片都做的很大，重要的部门在中间，用户放大网页时才会显示两边的内容，所以需要设置下在的CSS： background-position:center top;   // (水平居中，顶部不变)
+不管你如何放大 缩小网页，总能看到中间重要的部分。*/
+		 	background-position: center top; /* 这句代码会让背景图片：水平剧中，顶部不变。如果不加上，背景图片会偏离中间点 */
+		 }
+		 
+		 
+		 .topDiv .topPicDiv .lunBoPicDiv li:nth-child(1) a {
+		 	background-color: green ;
+		 	background-image: url(img/lubo01.jpg);
+		 }
+		 .topDiv .topPicDiv .lunBoPicDiv li:nth-child(2) a {
+		 	background-image: url(img/lubo02.jpg);
+		 }
+		 .topDiv .topPicDiv .lunBoPicDiv li:nth-child(3) a {
+		 	background-image: url(img/lubo03.jpg);
+		 }
+		 .topDiv .topPicDiv .lunBoPicDiv li:nth-child(4) a {
+		 	background-image: url(img/lubo04.jpg);
+		 }
+		
+		 
+		 /* 轮播图动画 */
+		/* 创建loop动画规则 */
+/* 
+   轮播5张，总耗时10s，单张应为2s(20%)
+   单张切换动画耗时500ms，停留1500ms
+*/
+@keyframes lunBoUl {
+    0% {transform: translate(0,0);}
+    20% {transform: translate(0,0);} /* 停留1500ms */
+
+    25% {transform: translate(-25%,0);} /* 切换500ms 位移-20% */
+    40% {transform: translate(-25%,0);}
+
+    50% {transform: translate(-50%,0);}
+    65% {transform: translate(-50%,0);}
+
+    75% {transform: translate(-75%,0);}
+    100% {transform: translate(-75%,0);}
+
+ /*   100% {transform: translate(0,0);}  复位到第一张图片 */
+}
+		 
+		 
+		 
+		 /* 父相对子绝对，用于定位轮播图片左右控制按钮 */
+		.topDiv .topPicDiv>a {
+			text-decoration: none;
+			width: 50px;
+			height: 80px;
+			font-size: 50px;
+			line-height: 80px;
+			text-align: center;
+			color: white;
+			
+			position: absolute;
+			top: 50% ;   /* 箭头垂直居中：先定位到高度的50%，再减去按钮本身高度的一半，-40px */
+			margin-top: -40px;
+			
+			/* 设置 轮播图片左右控制按钮 为隐藏状态，当鼠标放到它的父控件上时，再显示 */
+			display:none ;
+		}
+		
+		/* 父相对子绝对，用于定位轮播图片左右控制按钮 */
+		.topDiv .topPicDiv>.leftArrow {
+			left: 50px;
+		}
+		.topDiv .topPicDiv>.rightArrow {
+			right: 50px;
+			
+		}
+		
+		/* 设置 轮播图片左右控制按钮 为隐藏状态，当鼠标放到它的父控件上时，再显示 */
+		.topDiv .topPicDiv:hover .leftArrow {
+			background-color: rgba(0,0,0,0.7);
+			display: block;
+		}
+		.topDiv .topPicDiv:hover .rightArrow {
+			background-color: rgba(0,0,0,0.7);
+			display: block;
+		}
+		
+		
+		
+		/* 轮播图左侧的8个分栏  */
+		.topDiv .topPicDiv>.left-8 {
+			width: 210px;
+			height: 360px;
+			position: absolute;
+			left: 15%;
+			top: 0px;
+			background-color: rgba(0,0,0,0.2);
+			
+			
+		}
+		.topDiv .topPicDiv>.left-8>a {
+			display: inline-block;
+			width: 210px;
+			height:45px;
+			/*0 margin:0px 15px ;  控制上下，第二个参数控制左右*/
+			border-bottom: 1px solid white;
+			line-height: 45px;
+			color: white;
+			text-decoration: none;
+			
+			text-indent: 1em; /* 添加点位符号 */
+		}
+		
+		.topDiv .topPicDiv>.left-8 a>span {
+			display: inline-block;
+			width: 30px;
+			height: 45px;
+			margin-right: 20px;
+			float: right;
+			line-height: 45px;
+			text-align: center;
+			font-size: 25px;
+			color: rgb(178,178,178);
+			
+		}
+
+		.topDiv .topPicDiv>.left-8>a:hover {
+			background-color: white;
+			color: black;
+		}
+		
+
+
+		/* 轮播图右侧的5个分栏  */
+		.topDiv .topPicDiv>.right-5 {
+			width: 210px;
+			height: 300px;
+			position: absolute;
+			top: 30px;
+			right: 15%;
+			background-color: white;
+			
+		}
+		
+		.topDiv .topPicDiv>.right-5>span {
+			display: inline-block;
+			width: 210px;
+			height: 35px;
+			line-height: 35px;
+			color: lightgreen;
+			text-align: center;
+		}
+		
+		.topDiv .topPicDiv>.right-5>a {
+			display: inline-block;
+			width: 194px;
+			height: 44px;
+			margin: 0 8px;
+			text-decoration: none;
+			background-color: rgb(250,250,250);
+			border-top: 1px solid rgb(244,244,244);
+			box-sizing: border-box;
+		}	
+		.topDiv .topPicDiv .right-5:nth-child(6) {
+			border-bottom: 1px solid rgb(244,244,244);
+		}
+		
+		.topDiv .topPicDiv>.right-5>a>img {
+			width: 18px;
+			height: 18px;
+			margin-top: 13px;
+			display: inline-block;
+		}
+		.topDiv .topPicDiv>.right-5>a>p {
+			width: 166px;
+			height: 44px;
+			font-size: 10px;
+			color: black;
+			display: inline-block;
+			line-height: 44px;
+			float: right;
+		}
+		
+		.topDiv .topPicDiv .right-5 .luBoEmailInput {
+			width: 194px;
+			height: 40px;
+			margin: 0 8px;
+			
+		}
+		.topDiv .topPicDiv .right-5 .luBoEmailInput>input {
+			width: 144px;
+			height: 30px;
+			float: left;
+			margin-top: 3px;
+		}
+		.topDiv .topPicDiv .right-5 .luBoEmailInput>a {
+			display: inline-block;
+			width: 44px;
+			height: 32px;
+			text-decoration: none;
+			color: limegreen;
+			float: left;
+			margin-top: 3px;
+			border: 1px solid rgb(200,200,200);
+			font-size: 10px;
+			line-height: 32px;
+			text-align: center;
+		}
+		.topDiv .topPicDiv .right-5 .luBoEmailInput>a:hover {
+			background-color: limegreen;
+			color: white;
+		}
+
+
+		
+		
+		
+		
+		/* 中间内容部分
+		 * 
+		 * 
+		 * 
+		 *  */
+		.midDiv {
+			width: 1000px;
+			height: 2700px;
+			margin: 0px 15%;  /**/
+			border-bottom: 1px solid rgb(153,153,153);
+		}
+		
+		.midDiv .content01Div {
+			width: 1000px;
+			height: 140px;
+			
+		}
+		.midDiv .content01Div a {
+			display: inline-block;
+			width: 325px;
+			height: 120px;
+			
+		}
+		.midDiv .content01Div a:nth-child(1) {
+			background: url(img/p1-1.jpg) no-repeat;
+		}
+		.midDiv .content01Div a:nth-child(2) {
+			background: url(img/p1-2.jpg) no-repeat;
+			margin-left: 4px;
+			margin-right: 4px;
+		}
+		.midDiv .content01Div a:last-child {
+			background: url(img/p1-3.jpg) no-repeat;
+		}
+
+		/* 最新课程 */
+		.midDiv .content02Div {
+			width: 1000px;
+			height: 260px;
+			
+			margin-top: 10px;
+			
+		}
+
+		.midDiv .content02Div>a {
+			width: 235px;
+			height: 240px;
+			background-color: white;
+			display: inline-block;
+			margin-right: 20px;
+			text-decoration: none;
+			color: black;
+			
+			
+		/*	margin-top: 0px;    ??????    */
+			float: left;
+		}
+		.midDiv .content02Div>a:nth-child(4) {
+			margin: 0px;
+		}
+		
+		.midDiv .content02Div>a>img {
+			width: 235px;
+			height: 160px;
+		}
+		.midDiv .content02Div a p {
+			font-size: 13px;
+			text-indent: 1em;
+		}
+		
+		.midDiv .content02Div a span {
+			display: inline-block;
+			width: 235px;
+			height: 30px;
+			font-size: 10px;
+			text-indent: 1em;
+			color: darkgray;
+			margin-top: 30px;
+		}
+		
+		/* 职业方向 */   
+		.midDiv .moreJob {
+			float: right;
+			text-decoration: none;
+			color: darkgray;
+		}
+		.midDiv .moreJob:hover {
+			color: limegreen;
+		}
+		.midDiv .content03Div {
+			width: 1000px;
+			height: 330px;
+			
+			margin-top: 25px;
+		}
+		.midDiv .content03Div a {
+			display: inline-block;
+			width: 190px;
+			height: 150px;
+			text-decoration: none;
+			color: darkgray;
+			background-color: white;
+			float: left;
+			margin-right: 12px;
+			margin-bottom: 12px;
+			text-align: center;
+		}
+		.midDiv .content03Div a:hover {
+			box-shadow:1px 2px 10px ;	/* 水平阴影位置、垂直阴影位置、模糊度 */		
+		}
+		
+		.midDiv .content03Div a:nth-child(5){
+			margin-right: 0px;
+			
+		}
+		.midDiv .content03Div a:nth-child(10){
+			margin-right: 0px;
+		}
+		
+		.midDiv .content03Div a img {
+			display: inline-block;
+			width: 160px;
+			height: 100px;
+			margin: 0 auto;
+		}
+		
+		
+		
+		/* 知识体系  */
+		
+		.midDiv .content04Div {
+			width: 1000px;
+			height: 440px;
+			margin-top: 25px;
+			
+		}
+		.midDiv .content04Div a {
+			display: inline-block;
+			width: 130px;
+			height: 130px;
+			text-decoration: none;
+			color: black;
+			font-size: 12px;
+			text-align: center;
+			background-color: white;
+			
+			float: left;
+			margin-right: 15px;
+			margin-bottom: 15px;
+		}
+		.midDiv .content04Div a:hover {
+			box-shadow:1px 2px 10px ;	/* 水平阴影位置、垂直阴影位置、模糊度 */		
+		}
+		
+		.midDiv .content04Div a:nth-child(7) {
+			margin-right: 0px;
+		}
+		.midDiv .content04Div a:nth-child(14) {
+			margin-right: 0px;
+		}
+		.midDiv .content04Div a:nth-child(21) {
+			margin-right: 0px;
+		}
+		
+		.midDiv .content04Div a img {
+			width: 51px;
+			height: 51px;
+			margin: 0px auto;
+			margin-top: 20px;
+		}
+		.midDiv .content04Div a p {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		.midDiv .content04Div span {
+			color: limegreen;
+		}
+		
+		
+		/* 极客服务 */
+		.midDiv .content05Div {
+			width: 1000px;
+			height: 1000px;
+		}
+		
+		.midDiv .content05Div .content051 {
+			width: 1000px;
+			height: 450px;
+			
+			margin-top: 25px;
+		}
+		
+		.midDiv .content05Div .content051 .div51 {
+			width: 326px;
+			height: 210px;
+			background-color: white;
+			float: left;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+		.midDiv .content05Div .content051 .div51:nth-child(3) {
+			margin-right: 0px;
+		}
+		.midDiv .content05Div .content051 .div51:nth-child(6) {
+			margin-right: 0px;
+		}
+		
+		.midDiv .content05Div .content051 .div51 .leftTop-5 {
+			display: inline-block;
+			float: left;
+			margin-left: 10px;
+			margin-top: 10px;
+			font-size: 10px;
+			color: darkgrey;
+			background-color: rgb(244,244,244);
+		}
+		
+		.midDiv .content05Div .content051 .div51 .mid-00 {
+			height: 40px;
+			font-size: 20px;
+			color: limegreen;
+			line-height: 40px;
+			margin-top: 30px;
+			
+		}
+		.midDiv .content05Div .content051 .div51 .mid-01 {
+			color: darkgray;
+			font-size: 10px;
+			margin-bottom: 20px;
+		}
+		
+		.midDiv .content05Div .content051 .div51 .mid-02 {
+			height: 20px;
+			line-height: 20px;
+			font-size: 13px;
+		}
+		
+		.midDiv .content05Div .content051 .div51 a {
+			display: inline-block;
+			width: 100px;
+			height: 30px;
+			text-decoration: none;
+			border: 1px solid darkgray;
+			line-height: 30px;
+			color: black;
+			margin-top: 20px;
+		}
+		.midDiv .content05Div .content051 .div51 .mida02 {
+			color: limegreen;
+			border-color: limegreen;
+		}
+		
+		.midDiv .content05Div .content051 .div51 .QQquna {
+			width: 150px;
+		}
+		
+		.midDiv .content05Div .content051 .div51 a:hover {
+			color: white;
+			background-color: limegreen;
+		}
+		
+		
+		/* 极客服务② */
+		.midDiv .content05Div .content052 {
+			width: 1000px;
+			height: 390px;
+		
+		}
+		
+		.midDiv .content05Div .content052 div {
+			width: 495px;
+			height: 370px;
+			background-color:white ;
+			padding-bottom: 15px;
+			box-sizing: border-box;
+		}
+		
+		.midDiv .content05Div .content052 .div521 {
+			float: left;
+			
+		}
+		.midDiv .content05Div .content052 .div522 {
+			float: right;
+			
+		}
+		/* 左边的 */
+		.midDiv .content05Div .content052 .div521>p {
+			width: 460px;
+			margin-left: 15px;
+			margin-right: 15px;
+			height: 45px;
+			border-bottom: 1px solid darkgray;
+			line-height: 45px;
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+		.midDiv .content05Div .content052 .div521>p>a {
+			width: 100px;
+			height: 45px;
+			text-decoration: none;
+			line-height: 45px;
+			color: gray;
+			font-size: 12px;
+			float: right;
+		}
+		.midDiv .content05Div .content052 .div521>a {
+			width: 460px;
+			height:27px ;
+			font-size: 10px;
+			text-decoration: none;
+			color: black;
+			display: inline-block;
+			
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		
+		.midDiv .content05Div .content052 .div521>a img {
+			display: inline-block;
+			max-width: 18px;
+			height: 18px;
+			margin-top: 3px;
+			margin-right: 8px;
+		}
+		.midDiv .content05Div .content052 .div521>a .leftSpan {
+			display: inline-block;
+			width: 300px;
+			height: 27px;
+			line-height: 27px;
+			overflow: hidden;
+			text-overflow: ellipsis;  
+			
+		}
+		.midDiv .content05Div .content052 .div521>a .rightSpan {
+			display: inline-block;
+			width: 100px;
+			height: 27px;
+			line-height: 27px;
+			
+			float: right;
+			text-align: right;
+		}
+		
+		/* 右边的 */
+		.midDiv .content05Div .content052 .div522>p {
+			width: 460px;
+			margin-left: 15px;
+			margin-right: 15px;
+			height: 45px;
+			border-bottom: 1px solid darkgray;
+			line-height: 45px;
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+		.midDiv .content05Div .content052 .div522>p>a {
+			width: 100px;
+			height: 45px;
+			text-decoration: none;
+			line-height: 45px;
+			color: gray;
+			font-size: 12px;
+			float: right;
+		}
+		.midDiv .content05Div .content052 .div522>a {
+			width: 460px;
+			height:27px ;
+			font-size: 10px;
+			text-decoration: none;
+			color: black;
+			display: inline-block;
+			
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		
+		.midDiv .content05Div .content052 .div522>a img {
+			display: inline-block;
+			max-width: 18px;
+			height: 18px;
+			margin-top: 3px;
+			margin-right: 8px;
+		}
+		.midDiv .content05Div .content052 .div522>a .leftSpan {
+			display: inline-block;
+			width: 300px;
+			height: 27px;
+			line-height: 27px;
+			overflow: hidden;
+			text-overflow: ellipsis;  
+			
+		}
+		.midDiv .content05Div .content052 .div522>a .rightSpan {
+			display: inline-block;
+			width: 100px;
+			height: 27px;
+			line-height: 27px;
+			
+			float: right;
+			text-align: right;
+		}
+		
+		/* 学员风采 */
+		
+		.midDiv .content05Div .content053 {
+			width: 1000px;
+			height: 230px;
+			
+		}
+		
+		.midDiv .content05Div .content053 a {
+			width: 330px;
+			height: 200px;
+			background-color: white;
+			text-decoration: none;
+			color: black;
+			font-size: 14px;
+			float: left;
+			padding-left: 20px;
+			padding-right: 20px;
+			box-sizing: border-box;
+			text-align: center;
+			
+			position: relative;
+		}
+		.midDiv .content05Div .content053 a:nth-child(2) {
+			margin-left: 4px;
+			margin-right: 4px;
+		}
+		.midDiv .content05Div .content053 a .cont53-p1 {
+			display: inline-block;
+			margin-top: 10px;
+			background-color: tomato;
+			padding-left: 5px;
+			padding-right: 5px;  /* 设置 span左右间距 */
+			color: white;
+			
+		}
+		.midDiv .content05Div .content053 a .cont53-p2 {
+			width: 260px;
+			height: 80px;
+			margin: 10px auto ;
+			text-align: left;
+			color: rgb(142,142,142);
+		}
+		.midDiv .content05Div .content053 a img {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;  /* 圆形头像 */
+			
+			position: absolute;
+			top: 120px;
+			left: 40px;
+		}
+		
+		.midDiv .content05Div .content053 a .cont53-p3 {
+			width: 100px;
+			height: 30px;
+			line-height: 30px;
+			margin-left:90px;
+			color: rgb(85,85,85);
+			text-align: left;
+		}
+		.midDiv .content05Div .content053 a .cont53-p4 {
+			width: 200px;
+			height: 30px;
+			line-height: 30px;
+			margin-left: 90px;
+			color: rgb(153,153,153);
+			text-align: left;
+		}
+		
+		
+		/* 合作企业 */
+		
+		.midDiv .content06 {
+			width: 1000px;
+			height: 170px;
+			margin-top: 25px;
+			
+		}
+		.midDiv .content06 a {
+			display: inline-block;
+			width: 135px;
+			height: 50px;
+			float: left;
+			margin-right: 9px;
+			margin-bottom: 10px;
+			
+			text-decoration: none;
+		}
+		.midDiv .content06 a:nth-child(7) {
+			margin-right: 0px;
+		}
+		.midDiv .content06 a:nth-child(14) {
+			margin-right: 0px;
+		}
+		
+		.midDiv .content06 a img {
+			width: 135px;
+			height: 50px;
+		}
+		.midDiv .content06 a:hover {
+			box-shadow:1px 2px 10px ;	/* 水平阴影位置、垂直阴影位置、模糊度 */		
+		}
+		
+		h3 {
+			margin-top: 10px;
+		}
+		
+		
+		
+		
+		/* 底部  */
+		.bottDiv  {
+			width: 1000px;
+			height: 200px;
+			margin: 0px 15%;   /**/
+			
+			text-align: center
+		}
+		.bottDiv .bott01 {
+			width: 1000px;
+			height: 60px;
+			
+		}
+		.bottDiv .bott01 a {
+			display: inline-block;
+			width: 21px;
+			height: 20px;
+			margin-top: 20px;
+			margin-right: 20px;
+			
+		}
+		
+		/* 精灵图 */
+		.bottDiv .bott01 a:nth-child(1) {
+			background: url(img/otherway.png) no-repeat 1px 0px;
+		}
+		.bottDiv .bott01 a:nth-child(2) {
+			background: url(img/otherway.png) no-repeat -28px 0px;
+		}
+		.bottDiv .bott01 a:nth-child(3) {
+			background: url(img/otherway.png) no-repeat -55px 0px;
+		}
+		.bottDiv .bott01 a:nth-child(4) {
+			background: url(img/otherway.png) no-repeat -80px 0px;
+		}
+		.bottDiv .bott01 a:nth-child(5) {
+			background: url(img/otherway.png) no-repeat -102px 0px;
+		}
+		
+		.bottDiv .bott02 {
+			width: 1000px;
+			height: 50px;
+			margin-top: 10px;
+			border-bottom: 1px solid rgb(153,153,153);
+		}
+		.bottDiv .bott02 a {
+			display: inline-block;
+			width: 80px;
+			height: 20px;
+			line-height: 20px;
+			color: rgb(153,153,153);
+			text-decoration: none;
+			
+			text-align: left;
+			margin-right: 10px;
+			border-right: 1px solid rgb(153,153,153);
+		}
+		.bottDiv .bott02 a:nth-child(8){
+			border-right:none ; 
+		}
+		
+		
+		.bottDiv p {
+			margin-top: 20px;
+			color: rgb(153,153,153);
+			font-size: 10px;
+		}
+		
+		</style>
+	 
+	</head>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<body>
+		
+		<!--顶部-->
+		<div class="topDiv">
+			<div class="topNavDiv">
+				<a href="http://www.jikexueyuan.com/" target="_blank">
+					<img src="img/logo.png" alt="极客学院" width="100px"/>
+				</a>
+				
+				<ul class="topNavUlDiv">
+					<li>
+						<a href="">首页</a>
+					</li>
+					<li>
+						<a href="">职业
+							<img src="img/jiantouxia.png" alt=""/>
+						</a>
+						
+					</li>
+					<li>
+						<a href="">课程
+							<img src="img/jiantouxia.png" alt=""/>
+						</a>
+					</li>
+					<li>
+						<a href="">企业
+							<img src="img/jiantouxia.png" alt=""/>
+						</a>
+					</li>
+					<li>
+						<a href="">社区
+							<img src="img/jiantouxia.png" alt=""/>
+						</a>
+					</li>
+					<li>
+						<a href="">会员</a>
+					</li>
+				</ul>
+				
+				<!-- 搜索框 -->
+				<input type="text" placeholder="搜索课程、问答或WiKi" />
+				<a href="" class="searchBtn">搜索</a>
+				
+				<div class="topNavPersonDiv">
+					<a href="" title="学习中心" class="topNavPersonDiva1">
+						<img src="img/center-icon01.png" alt="" />
+					</a>
+					<a href="" title="消息中心" class="topNavPersonDiva2">
+						<img alt="" />
+					</a>
+					<a href="" class="topNavPersonDiva3">
+						<img src="img/person01.gif" alt="" />
+					</a>
+				</div>
+				
+			</div>
+			
+			<div class="topPicDiv">
+				
+				<ul class="lunBoPicDiv">
+					<li>
+						<a href=""></a>
+					</li>
+					<li>
+						<a href=""></a>
+					</li>
+					<li>
+						<a href=""></a>
+					</li>
+					<li>
+						<a href=""></a>
+					</li>
+				</ul>
+				
+				<!-- 轮播图左右控制按钮 
+					如果鼠标移动上去，不是点击的话，要加上 href
+				-->
+				<a class="leftArrow" href="">&lt;</a>
+				<a class="rightArrow" href="">&gt;</a>
+				
+				
+				<!-- 轮播图左侧的8个分栏 -->
+				<div class="left-8">
+					<a href="">前端开发<span>&gt;</span></a>
+					<a href="">后端开发<span>&gt;</span></a>
+					<a href="">移动互联网<span>&gt;</span></a>
+					<a href="">人工智能<span>&gt;</span></a>
+					<a href="">智能硬件/物联网<span>&gt;</span></a>
+					<a href="">设计/产品/测试<span>&gt;</span></a>
+					<a href="">云计算/大数据<span>&gt;</span></a>
+					<a href="">技术支持<span>&gt;</span></a>
+				</div>
+				
+				<!-- 轮播图右侧的8个分栏 -->
+				<div class="right-5">
+					<span>极客头条</span>
+					<a href=""><img src="img/lunbo-rightDiv01.png" alt="" /><p>全方位解读Android热更新技术原理及方案</p></a>
+					<a href=""><img src="img/lunbo-rightDiv01.png" alt="" /><p>设计思维提升：MVC与MVVM设计模式详解</p></a>
+					<a href=""><img src="img/lunbo-rightDiv01.png" alt="" /><p>Django开发问答网站实战</p></a>
+					<a href=""><img src="img/lunbo-rightDiv01.png" alt="" /><p>AWS 人工智能新服务解析，多种服务任你选</p></a>
+					<a href=""><img src="img/lunbo-rightDiv01.png" alt="" /><p>SQL高级应用与多维数据</p></a>
+					<div class="luBoEmailInput">
+						<input type="email" name="" id="" placeholder="请输入您的邮箱地址"/><a href="" class="dingyue">订阅</a>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+		
+	
+		
+		
+		<!-- 中部 -->
+		<div class="midDiv">
+			<div class="content01Div">
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+			</div>
+			
+			<h3>最新课程</h3>
+			
+			<div class="content02Div">
+				<a href="">
+					<img src="img/p2-1.jpg" alt="" />
+					<p>Android热更新技术原理及方案详解</p>
+					<span>中级 |10门课 |2个实战项目</span>
+				</a>
+				<a href="">
+					<img src="img/p2-2.jpg" alt="" />
+					<p>SQL高级应用与多维分析</p>
+					<span>初级 |6门课</span>
+				</a>
+				<a href="">
+					<img src="img/p2-3.jpg" alt="" />
+					<p>Django开发问答网站实战</p>
+					<span>中级 |12门课</span>
+				</a>
+				<a href="">
+					<img src="img/p2-4.jpg" alt="" />
+					<p>MVC与MVVM框架设计</p>
+					<span>中级 |8门课 |8个实战项目</span>
+				</a>
+			</div>
+			
+			
+			<h3>职业方向</h3>
+			<a href="" class="moreJob">更多职业方向&gt;&gt;</a>
+			<div class="content03Div">
+				<a href=""><img src="img/p3-1.png"/><p>Android工程师</p></a>
+				<a href=""><img src="img/p3-2.png"/><p>Web前端工程师</p></a>
+				<a href=""><img src="img/p3-3.png"/><p>微信小程序工程师</p></a>
+				<a href=""><img src="img/p3-4.png"/><p>Python工程师</p></a>
+				<a href=""><img src="img/p3-5.png"/><p>PHP工程师</p></a>
+				<a href=""><img src="img/p3-6.png"/><p>Go语言工程师</p></a>
+				<a href=""><img src="img/p3-7.png"/><p>iOS工程师</p></a>
+				<a href=""><img src="img/p3-8.png"/><p>大数据平台研发工程师</p></a>
+				<a href=""><img src="img/p3-9.png"/><p>机器学习工程师</p></a>
+				<a href=""><img src="img/p3-10.png"/><p>JavaWeb工程师</p></a>
+			</div>
+ 
+
+			<h3>知识体系</h3>
+			<a href="" class="moreJob">更多知识体系&gt;&gt;</a>
+			<div class="content04Div">
+				<a href=""><img src="img/p4-1.png"/><p>HTML5开发</p><span>116门课程</span></a>
+				<a href=""><img src="img/p4-2.png"/><p>Android</p><span>90门课程</span></a>
+				<a href=""><img src="img/p4-3.png"/><p>JavaWeb</p><span>64门课程</span></a>
+				<a href=""><img src="img/p4-4.png"/><p>Node.js</p><span>39门课程</span></a>
+				<a href=""><img src="img/p4-5.png"/><p>Bootstrap</p><span>11门课程</span></a>
+				<a href=""><img src="img/p4-6.png"/><p>Unity3D</p><span>45门课程</span></a>
+				<a href=""><img src="img/p4-7.png"/><p>iOS开发</p><span>51门课程</span></a>
+				
+				<a href=""><img src="img/p4-8.png"/><p>Java语言</p><span>45门课程</span></a>
+				<a href=""><img src="img/p4-9.png"/><p>PHP语言</p><span>23门课程</span></a>
+				<a href=""><img src="img/p4-10.png"/><p>Python</p><span>38门课程</span></a>
+				<a href=""><img src="img/p4-11.png"/><p>Swift语言</p><span>11门课程</span></a>
+				<a href=""><img src="img/p4-12.png"/><p>JavaScript</p><span>43门课程</span></a>
+				<a href=""><img src="img/p4-13.png"/><p>C语言</p><span>17门课程</span></a>
+				<a href=""><img src="img/p4-14.png"/><p>Asp.Net</p><span>61门课程</span></a>
+				
+				<a href=""><img src="img/p4-15.png"/><p> Cocos2d-x游戏开发</p><span>89门课程</span></a>
+				<a href=""><img src="img/p4-16.png"/><p>C#</p><span>30门课程</span></a>
+				<a href=""><img src="img/p4-17.png"/><p>GUI</p><span>40门课程</span></a>
+				<a href=""><img src="img/p4-18.png"/><p>Docker</p><span>9门课程</span></a>
+				<a href=""><img src="img/p4-19.png"/><p>Arduino</p><span>14门课程</span></a>
+				<a href=""><img src="img/p4-20.png"/><p>Egret</p><span>7门课程</span></a>
+				<a href=""><img src="img/p4-21.png"/><p>UiAutomator</p><span>20门课程</span></a>
+			</div>
+			
+			
+			<h3>极客服务</h3>
+			<div class="content05Div">
+				
+				<!-- 极客服务① -->
+				<div class="content051">
+					<div class="div51">
+						<span class="leftTop-5">就业培训</span>
+						<p class="mid-00">大牛程序员</p>
+						<p class="mid-01">线下面授教学，不就业不付款</p>
+						<p class="mid-02">4个月小白变大牛，月薪8000起</p>
+						<p class="mid-02">门槛低？就业难？老师坑？学不会？</p>
+						<a href="" class="mida01">了解更多</a>
+						<a href="" class="mida02">免费试听</a>
+					</div>
+					
+					<div class="div51">
+						<span class="leftTop-5">在线学</span>
+						<p class="mid-00">线上就业班</p>
+						<p class="mid-01">游戏关卡式任务驱动学习</p>
+						<p class="mid-02">2-4个月，160次1对1项目辅导</p>
+						<p class="mid-02">更低的价格，更好的质量，更灵活的学习</p>
+						<a href="" class="mida02">web</a>
+						<a href="" class="mida02">php</a>
+						<a href="" class="mida02">javaweb</a>
+					</div>
+					
+					<div class="div51">
+						<span class="leftTop-5">实习生</span>
+						<p class="mid-00">实习训练营</p>
+						<p class="mid-01">暑期不虚度，毕业不失业</p>
+						<p class="mid-02">入手互联网最“易”学、最具“钱”景的职业</p>
+						<p class="mid-02">2个月内完成课程，享受专属内推实习机会</p>
+						<a href="" class="mida01">了解更多</a>
+						<a href="" class="mida02">我要试学</a>
+					</div>
+					
+					<div class="div51">
+						<span class="leftTop-5">讲师招募</span>
+						<p class="mid-00">讲师计划</p>
+						<p class="mid-01">传道授业解惑，有情怀有奖励</p>
+						<p class="mid-02">系列课程合作，新技术快速发布</p>
+						<p class="mid-02">知识变现时代，极客为你提供平台</p>
+						<a href="" class="mida01">了解更多</a>
+						<a href="" class="mida02">我要加入</a>
+					</div>
+					
+					<div class="div51">
+						<span class="leftTop-5">初入职场</span>
+						<p class="mid-00">职业规划</p>
+						<p class="mid-01">告别当前迷茫 自己当家做主</p>
+						<p class="mid-02">什么职业更有前途，自己适合做什么职业</p>
+						<p class="mid-02">我当前什么水平，如何更快到下个阶段</p>
+						<a class="QQquna">QQ群 (651451886)</a>
+					</div>
+					
+					<div class="div51">
+						<span class="leftTop-5"> 求职宝典 </span>
+						<p class="mid-00">就业指导</p>
+						<p class="mid-01">求职快 / 面试过 / 薪资高</p>
+						<p class="mid-02">让简历脱颖而出，应对各路面试的方法</p>
+						<p class="mid-02">顺利通过试用期，你肯定想要的求职宝典</p>
+						<a class="QQquna">QQ群 (651453006)</a>
+					</div>
+					
+				</div>
+			
+			
+				<!-- 极客服务② -->
+				<div class="content052">
+					<div class="div521">
+						<p>有问必答<a href="">更多问题&gt;&gt;</a></p>
+						<a href="">
+							<img src="img/p52-01.png"/>
+							<span class="leftSpan">【问答技巧】怎样提问才能让我的问题更快速被解答？</span>
+							<span class="rightSpan">68/27754</span>
+						</a>
+						<a href="">
+							<img src="img/p52-02.png"/>
+							<span class="leftSpan">Bootstrap 最新版 V4 中文文档 </span>
+							<span class="rightSpan">23/16759</span>
+						</a>
+						<a href="">
+							<img src="img/p52-03.png"/>
+							<span class="leftSpan">【老师分享】对LPS的Manacher算法感兴趣的同学请参考以下解法。 </span>
+							<span class="rightSpan">1/6398</span>
+						</a>
+						<a href="">
+							<img src="img/p52-04.png"/>
+							<span class="leftSpan">请问如何下载视频请问如何下载视频 </span>
+							<span class="rightSpan">14/182050</span>
+						</a>
+						<a href="">
+							<img src="img/p52-05.png"/>
+							<span class="leftSpan">【aria-expanded,aria-hidden到底做什么用？ </span>
+							<span class="rightSpan">1/46000</span>
+						</a>
+						<a href="">
+							<img src="img/p52-06.png"/>
+							<span class="leftSpan">现在新建android项目，layout下面有个content_main.xml.无法按照老师的传递自定义视图 </span>
+							<span class="rightSpan"> 7/38480</span>
+						</a>
+						<a href="">
+							<img src="img/p52-07.png"/>
+							<span class="leftSpan">老师，如何用Bootstrap布局一个垂直水平居中，没思路呀 </span>
+							<span class="rightSpan">6/36487</span>
+						</a>
+						<a href="">
+							<img src="img/p52-08.png"/>
+							<span class="leftSpan">不同fragment实现不同的功能  </span>
+							<span class="rightSpan">1/34565</span>
+						</a>
+						<a href="">
+							<img src="img/p52-09.png"/>
+							<span class="leftSpan">超级菜鸟想成为怎么成长？ </span>
+							<span class="rightSpan"> 27/28441</span>
+						</a>
+						<a href="">
+							<img src="img/p52-10.png"/>
+							<span class="leftSpan">build_native.py时报错 </span>
+							<span class="rightSpan">1/27900 </span>
+						</a>
+					</div>
+					<div class="div522">
+						<p>Wiki教程<a href="">更多教程&gt;&gt;</a></p>
+						<a href="">
+							<img src="img/p52-11.jpg"/>
+							<span class="leftSpan">TensorFlow 官方文档中文版</span>
+							<span class="rightSpan">30章</span>
+						</a>
+						<a href="">
+							<img src="img/p52-12.png"/>
+							<span class="leftSpan">深度学习入门深度学习入门 </span>
+							<span class="rightSpan"> 8章</span>
+						</a>
+						<a href="">
+							<img src="img/p52-13.jpg"/>
+							<span class="leftSpan">HTML5 中文教程HTML5 中文教程  </span>
+							<span class="rightSpan">31章</span>
+						</a>
+						<a href="">
+							<img src="img/p52-14.jpg"/>
+							<span class="leftSpan">Java 程序员眼中的 Linux </span>
+							<span class="rightSpan">35章</span>
+						</a>
+						<a href="">
+							<img src="img/p52-15.jpg"/>
+							<span class="leftSpan">ndroid官方培训课程中文版  </span>
+							<span class="rightSpan">50章</span>
+						</a>
+						<a href="">
+							<img src="img/p52-16.jpg"/>
+							<span class="leftSpan">杰出产品经理书杰出产品经理书 </span>
+							<span class="rightSpan"> 32章</span>
+						</a>
+						<a href="">
+							<img src="img/p52-17.jpg"/>
+							<span class="leftSpan">Material Design 中文版 </span>
+							<span class="rightSpan"> 60章</span>
+						</a>
+						<a href="">
+							<img src="img/p52-18.jpg"/>
+							<span class="leftSpan">The Swift Programming Language 中文版  </span>
+							<span class="rightSpan"> 25章</span>
+						</a>
+						<a href="">
+							<img src="img/p52-19.png"/>
+							<span class="leftSpan">React Native 官方文档中文版 </span>
+							<span class="rightSpan"> 50章 </span>
+						</a>
+						<a href="">
+							<img src="img/p52-20.jpg"/>
+							<span class="leftSpan">轻松学习 JavaScript </span>
+							<span class="rightSpan">45章</span>
+						</a>
+					</div>
+				</div>
+				
+				
+			
+				<!-- 极客服务③ -->
+				<div class="content053">
+					<a href="">
+						<span class="cont53-p1">学员故事</span>
+						<p class="cont53-p2">爆炸力学硕士转安卓开发，回顾自己从爆炸力学走向代码世界的历程，感触良多。庆幸自己没有留在研究所，程序员不断学习不断进步的感觉更有意义。</p>
+						<img src="img/person01.gif" alt="" />
+						<p class="cont53-p3">张少龙</p>
+						<p class="cont53-p4">入职 北京中航智科技</p>
+					</a>
+					<a href="">
+						<span class="cont53-p1">学员故事</span>
+						<p class="cont53-p2">美女程序媛，从运维转岗到前端开发工程师。工作上的变化只是一部分，遇到极客学院更重要的是让我知道了自己的潜力，不被未来的不确定性吓倒</p>
+						<img src="img/person01.gif" alt="" />
+						<p class="cont53-p3">杨帆</p>
+						<p class="cont53-p4">入职 深圳IBM</p>
+					</a>
+					<a href="">
+						<span class="cont53-p1">学员故事</span>
+						<p class="cont53-p2">Web大前端工程师就业班五期 03 班学员，某 985 大学信息与计算科学 2016 。</p>
+						<img src="img/person01.gif" alt="" />
+						<p class="cont53-p3">路昕宇</p>
+						<p class="cont53-p4">入职 浪弯融科科技公司</p>
+					</a>
+				</div>	
+			</div>
+
+			
+			<h3>合作企业</h3>
+			<a href="" class="moreJob">更多合作企业&gt;&gt;</a>
+			<div class="content06">
+				<a href=""><img src="img/p6-1.png"/></a>
+				<a href=""><img src="img/p6-2.jpg"/></a>
+				<a href=""><img src="img/p6-3.png"/></a>
+				<a href=""><img src="img/p6-4.png"/></a>
+				<a href=""><img src="img/p6-5.png"/></a>
+				<a href=""><img src="img/p6-6.png"/></a>
+				<a href=""><img src="img/p6-7.png"/></a>
+				<a href=""><img src="img/p6-8.png"/></a>
+				<a href=""><img src="img/p6-9.png"/></a>
+				<a href=""><img src="img/p6-10.png"/></a>
+				<a href=""><img src="img/p6-11.png"/></a>
+				<a href=""><img src="img/p6-2.png"/></a>
+				<a href=""><img src="img/p6-13.png"/></a>
+				<a href=""><img src="img/p6-14.png"/></a>
+			</div>
+			
+
+		</div>
+
+		<!--底部 -->
+		<div class="bottDiv">
+			<div class="bott01">
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+			</div>
+			
+			<div class="bott02">
+				<a href="">关于我们</a>
+				<a href="">加入我们</a>
+				<a href="">联系我们</a>
+				<a href="">讲师合作</a>
+				<a href="">帮助中心</a>
+				<a href="">黑板报</a>
+				<a href="">友情链接</a>
+				<a href="">意见反馈</a>
+			</div>
+			
+			<p>Copyright © 2013-2016 jikexueyuan.com All Rights Reserved. 京ICP备11018032号 京公网安备11010802013056</p>
+			
+		</div>
+		
+	</body>
+</html>
